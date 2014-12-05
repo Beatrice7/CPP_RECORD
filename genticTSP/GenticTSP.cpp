@@ -128,6 +128,7 @@ void GenticTSP::selectGroup()
 
 void GenticTSP::evoluteGroup()
 {
+    srand(time(NULL)); //srand一次即可！
     for(int i = 0; i < MAX_GEN; ++i)
     {
         selectGroup();
@@ -146,7 +147,7 @@ void GenticTSP::evoluteGroup()
 
 void GenticTSP::mutateGroup()
 {
-    srand(time(NULL));
+//    srand(time(NULL));
     int num;
     int pos1, pos2;
     int tmp;
@@ -158,6 +159,7 @@ void GenticTSP::mutateGroup()
         //随机选取两个path上变异的城市，采用交换两个城市的方法进行变异
         pos1 = rand() % CITIES;
         pos2 = rand() % CITIES;
+//        cout << "pos1:" << pos1 << "pos2: " << pos2 << endl;
 
         //如果相同则不能算是变异，这里用while确保变异
         while(pos1 == pos2)
@@ -182,7 +184,7 @@ void GenticTSP::crossUnits(unit &u1, unit &u2, unit &u3)
     list<int> path2(u2.path.begin(), u2.path.end());
     list<int> path3(u3.path.begin(), u3.path.end());
     //随机产生起始城市的id， 并将位置默认为第一个位置
-    srand((int)time(0));
+   // srand((int)time(0));
     int cityID = rand() % CITIES;
     list<int>::iterator res1, res2, res3;
     res1 = find(path1.begin(), path1.end(), cityID);

@@ -4,8 +4,8 @@
 #include <vector>
 #include <string>
 #define CITIES 99
-#define UNITS 50
-#define MAX_GEN 15
+#define UNITS 500
+#define MAX_GEN 20
 
 
 struct city{
