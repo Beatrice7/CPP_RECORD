@@ -15,11 +15,9 @@ class MatrixChain
         void printBest();
         ~MatrixChain(){}
 
-
     private:
         int* value_; //to store each Matrix's column and the first Matrix'srow
         int nMatrix_; 
-        int minCount_; //final min result
         std::vector<std::vector<int> > m_; //to store min result between 'Matrix_i' and 'Matrix_j'
         std::vector<std::vector<int> > s_; //to store the segment position, s[i][j]=k
 

@@ -1,11 +1,11 @@
 #include <iostream>
-#include <string>
 #include <vector>
 #include "MatrixChain.h"
-
 using namespace std;
-string result = "(A1A2A3A4A5A6)";
 
+/* 将两个矩阵m_和s_都初始化为(nMatrix + 1) *(nMatrix + 1)大小的矩阵
+ * 这便于以后的运算，从而无需考虑下标0的问题
+ */
 void MatrixChain::initBothMatrix()
 {
     m_.resize(nMatrix_ + 1);
@@ -50,6 +50,7 @@ int MatrixChain::lookupChain(int i, int j)
     return u;
 }
 
+
 void MatrixChain::traceChain(int i, int j)
 {
     if(i == j){
@@ -64,8 +65,10 @@ void MatrixChain::traceChain(int i, int j)
     }
 }
 
+//for test
 void MatrixChain::printBest()
 {
+    /*  
     cout << "m_: " << endl;
     for(int i = 0; i < nMatrix_; ++i)
     {
@@ -80,5 +83,9 @@ void MatrixChain::printBest()
             cout << s_[i][j] << " ";
         cout << endl;
     }
+
+    */
     cout << "min multiply count: " << m_[1][nMatrix_] << endl;
 }
+
+
