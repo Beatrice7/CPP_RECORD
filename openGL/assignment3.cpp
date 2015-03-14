@@ -202,10 +202,11 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     //gluLookAt(viewer[0], viewer[1], viewer[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    glTranslatef(trans[0], trans[1], trans[2]);
     glRotatef(theta[0], 1.0, 0.0, 0.0);
     glRotatef(theta[1], 0.0, 1.0, 0.0);
     glRotatef(theta[2], 0.0, 0.0, 1.0);
-    glTranslatef(trans[0], trans[1], trans[2]);
+   // glTranslatef(trans[0], trans[1], trans[2]);
     glScaled(scale[0], scale[1], scale[2]);
     
     /*
