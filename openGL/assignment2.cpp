@@ -83,10 +83,12 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     glLoadIdentity();
+    /*平移语句放在旋转之前，否则不是绕着物体自身旋转，而是绕之前着平移后的坐标中心*/
+    glTranslatef(trans[0], trans[1], trans[2]);
     glRotatef(theta[0], 1.0, 0.0, 0.0);
     glRotatef(theta[1], 0.0, 1.0, 0.0);
     glRotatef(theta[2], 0.0, 0.0, 1.0);
-    glTranslatef(trans[0], trans[1], trans[2]);
+   // glTranslatef(trans[0], trans[1], trans[2]);
     glScaled(scale[0], scale[1], scale[2]);
     
     colorObject();
